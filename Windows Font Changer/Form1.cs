@@ -19,7 +19,6 @@ namespace Windows_Font_Changer
 
         void btnCust_Click(object sender, EventArgs e)
         {
-            //RegWay1();
             RegistryKey localMachineKey = Registry.LocalMachine.OpenSubKey(RegWay1, true);
 
             localMachineKey.SetValue("Segoe UI (TrueType)", "");
@@ -32,7 +31,6 @@ namespace Windows_Font_Changer
 
             RegistryKey localMachineKey2 = Registry.LocalMachine.OpenSubKey(RegWay2, true);
 
-            //localMachineKey2.SetValue("login", "admin");
             localMachineKey2.SetValue("Segoe UI", textBox1.Text);
 
             label2.Text = "restart your computer to complete install";
