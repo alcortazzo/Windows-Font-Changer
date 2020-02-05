@@ -8,15 +8,35 @@ namespace Windows_Font_Changer
 {
     public partial class Form1 : Form
     {
-        RegistryKey localMachineKey = Registry.LocalMachine;
-        string RegWay1 = @"SOFTWARE\Microsoft\Windows NT\CurrentVersion\Fonts";
-        string RegWay2 = @"SOFTWARE\Microsoft\Windows NT\CurrentVersion\FontSubstitutes";
+        readonly RegistryKey localMachineKey = Registry.LocalMachine;
+        readonly string RegWay1 = @"SOFTWARE\Microsoft\Windows NT\CurrentVersion\Fonts";
+        readonly string RegWay2 = @"SOFTWARE\Microsoft\Windows NT\CurrentVersion\FontSubstitutes";
+        readonly string textRestart = "restart your computer to complete install";
 
         public Form1()
         {
             InitializeComponent();
+            this.ActiveControl = btn2;
+            btn2.Focus();
         }
 
+        void btn1_Click(object sender, EventArgs e)
+        {
+            btn1.Enabled = false;
+            btn1.Visible = false;
+            btn2.Enabled = false;
+            btn2.Visible = false;
+            btnReset.Enabled = false;
+            btnReset.Visible = false;
+            label1.ForeColor = Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(41)))), ((int)(((byte)(77)))));
+            label1.Text = "enter font name WITHOUT ERRORS";
+            btnCust.Enabled = true;
+            btnCust.Visible = true;
+            textBox1.Enabled = true;
+            textBox1.Visible = true;
+            label2.Text = "";
+            btnCust.Focus();
+        }
         void btnCust_Click(object sender, EventArgs e)
         {
             RegistryKey localMachineKey = Registry.LocalMachine.OpenSubKey(RegWay1, true);
@@ -32,37 +52,31 @@ namespace Windows_Font_Changer
             RegistryKey localMachineKey2 = Registry.LocalMachine.OpenSubKey(RegWay2, true);
 
             localMachineKey2.SetValue("Segoe UI", textBox1.Text);
+            textBox1.ForeColor = Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(212)))), ((int)(((byte)(25)))));
+            label2.Text = textRestart;
+            btnReset.Enabled = true;
+            btnReset.Visible = true;
 
-            label2.Text = "restart your computer to complete install";
+            /*MessageBox.Show("");*/
         }
 
-        private void btnExit_Click(object sender, EventArgs e)
+        void textBox1_MouseClick(object sender, MouseEventArgs e)
         {
-            Environment.Exit(0);
-        }
-
-        private void btn1_Click(object sender, EventArgs e)
-        {
-            btn1.Enabled = false;
-            btn1.Visible = false;
-            btn2.Enabled = false;
-            btn2.Visible = false;
-            label1.ForeColor = Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(41)))), ((int)(((byte)(77)))));
-            label1.Text = "enter font name WITHOUT ERRORS";
-            btnCust.Enabled = true;
-            btnCust.Visible = true;
-            textBox1.Enabled = true;
-            textBox1.Visible = true;
-            textBox1.Visible = true;
+            textBox1.ForeColor = Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            if (textBox1.Text == "Tahoma")
+            {
+                textBox1.Text = "";
+            }
             label2.Text = "";
         }
 
-        private void textBox1_MouseClick(object sender, MouseEventArgs e)
+        void textBox1_KeyDown(object sender, KeyEventArgs e)
         {
-            textBox1.Text = "";
+            if (e.KeyCode == Keys.Enter)
+                btnCust_Click(this, new EventArgs());
         }
 
-        private void btn2_Click(object sender, EventArgs e)
+        void btn2_Click(object sender, EventArgs e)
         {
             RegistryKey localMachineKey = Registry.LocalMachine.OpenSubKey(RegWay1, true);
 
@@ -88,26 +102,37 @@ namespace Windows_Font_Changer
             localMachineKey.SetValue("Segoe Script Bold (TrueType)", "segoescb.ttf");
             label1.ForeColor = Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(212)))), ((int)(((byte)(25)))));
             label1.Text = "default font has been installed";
-            label2.Text = "restart your computer to complete install";
+            label2.Text = textRestart;
+            btnReset.Enabled = true;
+            btnReset.Visible = true;
 
             RegistryKey localMachineKey2 = Registry.LocalMachine.OpenSubKey(RegWay2, true);
 
             localMachineKey2.DeleteValue("Segoe UI");
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Process.Start("https://github.com/alcortazzo");
         }
 
-        private void linkLabel1_MouseEnter(object sender, EventArgs e)
+        void linkLabel1_MouseEnter(object sender, EventArgs e)
         {
-            linkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            linkLabel1.LinkColor = Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
         }
 
-        private void linkLabel1_MouseLeave(object sender, EventArgs e)
+        void linkLabel1_MouseLeave(object sender, EventArgs e)
         {
-            linkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
+            linkLabel1.LinkColor = Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            Process.Start("shutdown.exe", "-r -t 0");
+        }
+        void btnExit_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
         }
     }
 }
