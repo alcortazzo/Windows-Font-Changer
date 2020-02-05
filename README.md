@@ -4,4 +4,8 @@ Program can change font of your system. Or restore default if you didn't like cu
 
 [![Version](https://github.com/alcortazzo/Windows-Font-Changer/blob/master/version.svg)](https://github.com/alcortazzo/Windows-Font-Changer/releases)
 
-![Windows Font Changer](https://i.imgur.com/a1Xjm7b.png)
+![Windows Font Changer](https://i.imgur.com/tUNTTEZ.png)
+
+![Windows Font Changer](https://i.imgur.com/pCROF5y.png)
+
+![Windows Font Changer](https://i.imgur.com/7iZns5O.png)
