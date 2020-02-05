@@ -3,7 +3,6 @@
      contentStyleType="text/css" height="20" preserveAspectRatio="xMidYMid meet"
      xmlns="http://www.w3.org/2000/svg" version="1.0">
 
-
     <linearGradient xmlns:xlink="http://www.w3.org/1999/xlink" x2="0" y2="100%"
                     xlink:type="simple" xlink:actuate="onLoad" id="a"
                     xlink:show="other">
@@ -25,10 +24,10 @@
             version
         </text>
         <text fill="#010101" x="58" fill-opacity=".3" y="15" class="tMove">
-            v1.0
+            v1.1
         </text>
         <text x="58" id="vText" y="14" class="tMove">
-            v1.0
+            v1.1
         </text>
     </g>
 </svg>
