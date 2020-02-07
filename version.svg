@@ -24,10 +24,10 @@
             version
         </text>
         <text fill="#010101" x="58" fill-opacity=".3" y="15" class="tMove">
-            v1.1
+            v1.2
         </text>
         <text x="58" id="vText" y="14" class="tMove">
-            v1.1
+            v1.2
         </text>
     </g>
 </svg>

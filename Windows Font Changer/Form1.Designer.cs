@@ -40,6 +40,7 @@ namespace Windows_Font_Changer
             this.label2 = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.btnReset = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBox1
@@ -116,7 +117,7 @@ namespace Windows_Font_Changer
             this.btnExit.FlatAppearance.BorderSize = 0;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.ForeColor = System.Drawing.Color.White;
-            this.btnExit.Location = new System.Drawing.Point(443, 272);
+            this.btnExit.Location = new System.Drawing.Point(439, 268);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 23);
             this.btnExit.TabIndex = 3;
@@ -156,7 +157,7 @@ namespace Windows_Font_Changer
             this.btnReset.FlatAppearance.BorderSize = 0;
             this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReset.ForeColor = System.Drawing.Color.White;
-            this.btnReset.Location = new System.Drawing.Point(359, 272);
+            this.btnReset.Location = new System.Drawing.Point(355, 268);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(78, 23);
             this.btnReset.TabIndex = 0;
@@ -166,12 +167,29 @@ namespace Windows_Font_Changer
             this.btnReset.Visible = false;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
+            // btnBack
+            // 
+            this.btnBack.Enabled = false;
+            this.btnBack.FlatAppearance.BorderSize = 0;
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.ForeColor = System.Drawing.Color.White;
+            this.btnBack.Location = new System.Drawing.Point(439, 239);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(75, 23);
+            this.btnBack.TabIndex = 9;
+            this.btnBack.TabStop = false;
+            this.btnBack.Text = "[B]ack";
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Visible = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(12)))), ((int)(((byte)(12)))));
             this.ClientSize = new System.Drawing.Size(526, 303);
             this.ControlBox = false;
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label2);
@@ -204,6 +222,7 @@ namespace Windows_Font_Changer
         private Label label2;
         private LinkLabel linkLabel1;
         private Button btnReset;
+        private Button btnBack;
     }
 }
 

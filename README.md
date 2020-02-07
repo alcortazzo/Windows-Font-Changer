@@ -1,11 +1,11 @@
 # Windows-Font-Changer
 
-Program can change font of your system. Or restore default if you didn't like custom font
+Program can change font of your system... or restore default font if you didn't like changed font.
 
 [![Version](https://github.com/alcortazzo/Windows-Font-Changer/blob/master/version.svg)](https://github.com/alcortazzo/Windows-Font-Changer/releases)
 
-![Windows Font Changer](https://i.imgur.com/tUNTTEZ.png)
+![Windows Font Changer](https://i.imgur.com/EAotqV6.png)
 
-![Windows Font Changer](https://i.imgur.com/pCROF5y.png)
+![Windows Font Changer](https://i.imgur.com/TjqjmEx.png)
 
-![Windows Font Changer](https://i.imgur.com/7iZns5O.png)
+![Windows Font Changer](https://i.imgur.com/sYvkU42.png)
